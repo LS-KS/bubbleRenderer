@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="500" height="500" viewBox="-250.0 -250.0 500 500" style="background-color: black">
+<defs>
+<radialGradient cx="-97.88169022809198" cy="190.24780447074787" r="12.546820937610256" gradientUnits="userSpaceOnUse" fy="190.24780447074787" fx="-97.88169022809198" id="d0">
+<stop offset="0%" stop-color="#FCE4EC" />
+<stop offset="20%" stop-color="#FCE4EC" />
+<stop offset="80%" stop-color="#C2185B" />
+<stop offset="100%" stop-color="black" />
+</radialGradient>
+<radialGradient cx="-43.23204386034374" cy="-82.49880582477526" r="13.639832388086127" gradientUnits="userSpaceOnUse" fy="-82.49880582477526" fx="-43.23204386034374" id="d1">
+<stop offset="0%" stop-color="#FCE4EC" />
+<stop offset="20%" stop-color="#FCE4EC" />
+<stop offset="80%" stop-color="#C2185B" />
+<stop offset="100%" stop-color="black" />
+</radialGradient>
+<radialGradient cx="-149.7419122513151" cy="172.0318098361032" r="17.54109042497795" gradientUnits="userSpaceOnUse" fy="172.0318098361032" fx="-149.7419122513151" id="d2">
+<stop offset="0%" stop-color="#FCE4EC" />
+<stop offset="20%" stop-color="#FCE4EC" />
+<stop offset="80%" stop-color="#C2185B" />
+<stop offset="100%" stop-color="black" />
+</radialGradient>
+<radialGradient cx="-208.16882386205177" cy="81.25815479487885" r="18.142673100957982" gradientUnits="userSpaceOnUse" fy="81.25815479487885" fx="-208.16882386205177" id="d3">
+<stop offset="0%" stop-color="#FCE4EC" />
+<stop offset="20%" stop-color="#FCE4EC" />
+<stop offset="80%" stop-color="#C2185B" />
+<stop offset="100%" stop-color="black" />
+</radialGradient>
+<radialGradient cx="89.77655344967809" cy="154.7846139744832" r="19.10325828665125" gradientUnits="userSpaceOnUse" fy="154.7846139744832" fx="89.77655344967809" id="d4">
+<stop offset="0%" stop-color="#FCE4EC" />
+<stop offset="20%" stop-color="#FCE4EC" />
+<stop offset="80%" stop-color="#C2185B" />
+<stop offset="100%" stop-color="black" />
+</radialGradient>
+<radialGradient cx="-172.12261941857895" cy="122.69893285008399" r="25.796681036135357" gradientUnits="userSpaceOnUse" fy="122.69893285008399" fx="-172.12261941857895" id="d5">
+<stop offset="0%" stop-color="#FCE4EC" />
+<stop offset="20%" stop-color="#FCE4EC" />
+<stop offset="80%" stop-color="#C2185B" />
+<stop offset="100%" stop-color="black" />
+</radialGradient>
+<radialGradient cx="-211.8169090412599" cy="21.607403403990258" r="29.66708768972474" gradientUnits="userSpaceOnUse" fy="21.607403403990258" fx="-211.8169090412599" id="d6">
+<stop offset="0%" stop-color="#FCE4EC" />
+<stop offset="20%" stop-color="#FCE4EC" />
+<stop offset="80%" stop-color="#C2185B" />
+<stop offset="100%" stop-color="black" />
+</radialGradient>
+<radialGradient cx="-42.635228582428574" cy="189.96612159000773" r="31.650922857193077" gradientUnits="userSpaceOnUse" fy="189.96612159000773" fx="-42.635228582428574" id="d7">
+<stop offset="0%" stop-color="#FCE4EC" />
+<stop offset="20%" stop-color="#FCE4EC" />
+<stop offset="80%" stop-color="#C2185B" />
+<stop offset="100%" stop-color="black" />
+</radialGradient>
+<radialGradient cx="-100.0682120240582" cy="133.92836582918952" r="32.542672625051" gradientUnits="userSpaceOnUse" fy="133.92836582918952" fx="-100.0682120240582" id="d8">
+<stop offset="0%" stop-color="#FCE4EC" />
+<stop offset="20%" stop-color="#FCE4EC" />
+<stop offset="80%" stop-color="#C2185B" />
+<stop offset="100%" stop-color="black" />
+</radialGradient>
+<radialGradient cx="25.51150627826013" cy="147.3417543327895" r="32.6524289994619" gradientUnits="userSpaceOnUse" fy="147.3417543327895" fx="25.51150627826013" id="d9">
+<stop offset="0%" stop-color="#FCE4EC" />
+<stop offset="20%" stop-color="#FCE4EC" />
+<stop offset="80%" stop-color="#C2185B" />
+<stop offset="100%" stop-color="black" />
+</radialGradient>
+<radialGradient cx="-174.58531222734973" cy="-48.79692405741068" r="34.04707965967775" gradientUnits="userSpaceOnUse" fy="-48.79692405741068" fx="-174.58531222734973" id="d10">
+<stop offset="0%" stop-color="#FCE4EC" />
+<stop offset="20%" stop-color="#FCE4EC" />
+<stop offset="80%" stop-color="#C2185B" />
+<stop offset="100%" stop-color="black" />
+</radialGradient>
+<radialGradient cx="-134.1585416308689" cy="53.35250258742165" r="37.4498769663771" gradientUnits="userSpaceOnUse" fy="53.35250258742165" fx="-134.1585416308689" id="d11">
+<stop offset="0%" stop-color="#FCE4EC" />
+<stop offset="20%" stop-color="#FCE4EC" />
+<stop offset="80%" stop-color="#C2185B" />
+<stop offset="100%" stop-color="black" />
+</radialGradient>
+<radialGradient cx="-119.70875048476314" cy="-119.9372739590327" r="37.83008851075305" gradientUnits="userSpaceOnUse" fy="-119.9372739590327" fx="-119.70875048476314" id="d12">
+<stop offset="0%" stop-color="#FCE4EC" />
+<stop offset="20%" stop-color="#FCE4EC" />
+<stop offset="80%" stop-color="#C2185B" />
+<stop offset="100%" stop-color="black" />
+</radialGradient>
+<radialGradient cx="-84.13818133397922" cy="-29.45789559365121" r="39.94613736465044" gradientUnits="userSpaceOnUse" fy="-29.45789559365121" fx="-84.13818133397922" id="d13">
+<stop offset="0%" stop-color="#FCE4EC" />
+<stop offset="20%" stop-color="#FCE4EC" />
+<stop offset="80%" stop-color="#C2185B" />
+<stop offset="100%" stop-color="black" />
+</radialGradient>
+<radialGradient cx="-23.82154745022571" cy="-150.98161842178683" r="42.79985939014526" gradientUnits="userSpaceOnUse" fy="-150.98161842178683" fx="-23.82154745022571" id="d14">
+<stop offset="0%" stop-color="#FCE4EC" />
+<stop offset="20%" stop-color="#FCE4EC" />
+<stop offset="80%" stop-color="#C2185B" />
+<stop offset="100%" stop-color="black" />
+</radialGradient>
+<radialGradient cx="-29.228734953916565" cy="64.25540384922644" r="46.94590524173937" gradientUnits="userSpaceOnUse" fy="64.25540384922644" fx="-29.228734953916565" id="d15">
+<stop offset="0%" stop-color="#FCE4EC" />
+<stop offset="20%" stop-color="#FCE4EC" />
+<stop offset="80%" stop-color="#C2185B" />
+<stop offset="100%" stop-color="black" />
+</radialGradient>
+<radialGradient cx="92.40387993961292" cy="-157.5679763857731" r="50.32965930954228" gradientUnits="userSpaceOnUse" fy="-157.5679763857731" fx="92.40387993961292" id="d16">
+<stop offset="0%" stop-color="#FCE4EC" />
+<stop offset="20%" stop-color="#FCE4EC" />
+<stop offset="80%" stop-color="#C2185B" />
+<stop offset="100%" stop-color="black" />
+</radialGradient>
+<radialGradient cx="92.39859022700843" cy="67.94424633250276" r="50.400696266998665" gradientUnits="userSpaceOnUse" fy="67.94424633250276" fx="92.39859022700843" id="d17">
+<stop offset="0%" stop-color="#FCE4EC" />
+<stop offset="20%" stop-color="#FCE4EC" />
+<stop offset="80%" stop-color="#C2185B" />
+<stop offset="100%" stop-color="black" />
+</radialGradient>
+<radialGradient cx="30.457591235743745" cy="-44.86397457913435" r="52.55523857515654" gradientUnits="userSpaceOnUse" fy="-44.86397457913435" fx="30.457591235743745" id="d18">
+<stop offset="0%" stop-color="#FCE4EC" />
+<stop offset="20%" stop-color="#FCE4EC" />
+<stop offset="80%" stop-color="#C2185B" />
+<stop offset="100%" stop-color="black" />
+</radialGradient>
+<radialGradient cx="170.1684577714573" cy="-44.86397457913435" r="59.21345465341432" gradientUnits="userSpaceOnUse" fy="-44.86397457913435" fx="170.1684577714573" id="d19">
+<stop offset="0%" stop-color="#FCE4EC" />
+<stop offset="20%" stop-color="#FCE4EC" />
+<stop offset="80%" stop-color="#C2185B" />
+<stop offset="100%" stop-color="black" />
+</radialGradient>
+</defs>
+<circle cx="-97.88169022809198" cy="190.24780447074787" r="12.546820937610256" fill="url(#d0)" stroke="black" stroke-width="1" />
+<text x="-97.88169022809198" y="190.24780447074787" font-size="10" text-anchor="middle" fill="black"><tspan x="-97.88169022809198" dy="0em">Label 0</tspan><tspan x="-97.88169022809198" dy="1em">43</tspan></text>
+<circle cx="-43.23204386034374" cy="-82.49880582477526" r="13.639832388086127" fill="url(#d1)" stroke="black" stroke-width="1" />
+<text x="-43.23204386034374" y="-82.49880582477526" font-size="10" text-anchor="middle" fill="black"><tspan x="-43.23204386034374" dy="0em">Label 1</tspan><tspan x="-43.23204386034374" dy="1em">26</tspan></text>
+<circle cx="-149.7419122513151" cy="172.0318098361032" r="17.54109042497795" fill="url(#d2)" stroke="black" stroke-width="1" />
+<text x="-149.7419122513151" y="172.0318098361032" font-size="10" text-anchor="middle" fill="black"><tspan x="-149.7419122513151" dy="0em">Label 2</tspan><tspan x="-149.7419122513151" dy="1em">196</tspan></text>
+<circle cx="-208.16882386205177" cy="81.25815479487885" r="18.142673100957982" fill="url(#d3)" stroke="black" stroke-width="1" />
+<text x="-208.16882386205177" y="81.25815479487885" font-size="10" text-anchor="middle" fill="black"><tspan x="-208.16882386205177" dy="0em">Label 3</tspan><tspan x="-208.16882386205177" dy="1em">256</tspan></text>
+<circle cx="89.77655344967809" cy="154.7846139744832" r="19.10325828665125" fill="url(#d4)" stroke="black" stroke-width="1" />
+<text x="89.77655344967809" y="154.7846139744832" font-size="10" text-anchor="middle" fill="black"><tspan x="89.77655344967809" dy="0em">Label 4</tspan><tspan x="89.77655344967809" dy="1em">490</tspan></text>
+<circle cx="-172.12261941857895" cy="122.69893285008399" r="25.796681036135357" fill="url(#d5)" stroke="black" stroke-width="1" />
+<text x="-172.12261941857895" y="122.69893285008399" font-size="10" text-anchor="middle" fill="black"><tspan x="-172.12261941857895" dy="0em">Label 5</tspan><tspan x="-172.12261941857895" dy="1em">22</tspan></text>
+<circle cx="-211.8169090412599" cy="21.607403403990258" r="29.66708768972474" fill="url(#d6)" stroke="black" stroke-width="1" />
+<text x="-211.8169090412599" y="21.607403403990258" font-size="10" text-anchor="middle" fill="black"><tspan x="-211.8169090412599" dy="0em">Label 6</tspan><tspan x="-211.8169090412599" dy="1em">93</tspan></text>
+<circle cx="-42.635228582428574" cy="189.96612159000773" r="31.650922857193077" fill="url(#d7)" stroke="black" stroke-width="1" />
+<text x="-42.635228582428574" y="189.96612159000773" font-size="10" text-anchor="middle" fill="black"><tspan x="-42.635228582428574" dy="0em">Label 7</tspan><tspan x="-42.635228582428574" dy="1em">148</tspan></text>
+<circle cx="-100.0682120240582" cy="133.92836582918952" r="32.542672625051" fill="url(#d8)" stroke="black" stroke-width="1" />
+<text x="-100.0682120240582" y="133.92836582918952" font-size="10" text-anchor="middle" fill="black"><tspan x="-100.0682120240582" dy="0em">Label 8</tspan><tspan x="-100.0682120240582" dy="1em">123</tspan></text>
+<circle cx="25.51150627826013" cy="147.3417543327895" r="32.6524289994619" fill="url(#d9)" stroke="black" stroke-width="1" />
+<text x="25.51150627826013" y="147.3417543327895" font-size="10" text-anchor="middle" fill="black"><tspan x="25.51150627826013" dy="0em">Label 9</tspan><tspan x="25.51150627826013" dy="1em">46</tspan></text>
+<circle cx="-174.58531222734973" cy="-48.79692405741068" r="34.04707965967775" fill="url(#d10)" stroke="black" stroke-width="1" />
+<text x="-174.58531222734973" y="-48.79692405741068" font-size="10" text-anchor="middle" fill="black"><tspan x="-174.58531222734973" dy="0em">Label 10</tspan><tspan x="-174.58531222734973" dy="1em">308</tspan></text>
+<circle cx="-134.1585416308689" cy="53.35250258742165" r="37.4498769663771" fill="url(#d11)" stroke="black" stroke-width="1" />
+<text x="-134.1585416308689" y="53.35250258742165" font-size="10" text-anchor="middle" fill="black"><tspan x="-134.1585416308689" dy="0em">Label 11</tspan><tspan x="-134.1585416308689" dy="1em">355</tspan></text>
+<circle cx="-119.70875048476314" cy="-119.9372739590327" r="37.83008851075305" fill="url(#d12)" stroke="black" stroke-width="1" />
+<text x="-119.70875048476314" y="-119.9372739590327" font-size="10" text-anchor="middle" fill="black"><tspan x="-119.70875048476314" dy="0em">Label 12</tspan><tspan x="-119.70875048476314" dy="1em">162</tspan></text>
+<circle cx="-84.13818133397922" cy="-29.45789559365121" r="39.94613736465044" fill="url(#d13)" stroke="black" stroke-width="1" />
+<text x="-84.13818133397922" y="-29.45789559365121" font-size="10" text-anchor="middle" fill="black"><tspan x="-84.13818133397922" dy="0em">Label 13</tspan><tspan x="-84.13818133397922" dy="1em">386</tspan></text>
+<circle cx="-23.82154745022571" cy="-150.98161842178683" r="42.79985939014526" fill="url(#d14)" stroke="black" stroke-width="1" />
+<text x="-23.82154745022571" y="-150.98161842178683" font-size="10" text-anchor="middle" fill="black"><tspan x="-23.82154745022571" dy="0em">Label 14</tspan><tspan x="-23.82154745022571" dy="1em">149</tspan></text>
+<circle cx="-29.228734953916565" cy="64.25540384922644" r="46.94590524173937" fill="url(#d15)" stroke="black" stroke-width="1" />
+<text x="-29.228734953916565" y="64.25540384922644" font-size="10" text-anchor="middle" fill="black"><tspan x="-29.228734953916565" dy="0em">Label 15</tspan><tspan x="-29.228734953916565" dy="1em">354</tspan></text>
+<circle cx="92.40387993961292" cy="-157.5679763857731" r="50.32965930954228" fill="url(#d16)" stroke="black" stroke-width="1" />
+<text x="92.40387993961292" y="-157.5679763857731" font-size="10" text-anchor="middle" fill="black"><tspan x="92.40387993961292" dy="0em">Label 16</tspan><tspan x="92.40387993961292" dy="1em">223</tspan></text>
+<circle cx="92.39859022700843" cy="67.94424633250276" r="50.400696266998665" fill="url(#d17)" stroke="black" stroke-width="1" />
+<text x="92.39859022700843" y="67.94424633250276" font-size="10" text-anchor="middle" fill="black"><tspan x="92.39859022700843" dy="0em">Label 17</tspan><tspan x="92.39859022700843" dy="1em">51</tspan></text>
+<circle cx="30.457591235743745" cy="-44.86397457913435" r="52.55523857515654" fill="url(#d18)" stroke="black" stroke-width="1" />
+<text x="30.457591235743745" y="-44.86397457913435" font-size="10" text-anchor="middle" fill="black"><tspan x="30.457591235743745" dy="0em">Label 18</tspan><tspan x="30.457591235743745" dy="1em">140</tspan></text>
+<circle cx="170.1684577714573" cy="-44.86397457913435" r="59.21345465341432" fill="url(#d19)" stroke="black" stroke-width="1" />
+<text x="170.1684577714573" y="-44.86397457913435" font-size="10" text-anchor="middle" fill="black"><tspan x="170.1684577714573" dy="0em">Label 19</tspan><tspan x="170.1684577714573" dy="1em">200</tspan></text>
+</svg>
