@@ -1,22 +1,32 @@
+import sys
+
 import drawsvg
 import circlify as circ
 import random
 import math as m
-
+from PySide6.QtSvg import QSvgRenderer
+from PySide6.QtGui import QImage, QPainter, QGuiApplication
+from PySide6.QtCore import QXmlStreamReader
+from PySide6.QtWidgets import QApplication
 
 
 def sin(phi):
     """ calculactes sin value from degree"""
     return m.sin(phi * m.pi / 180)
 
+
 def cos(phi):
     """ calculactes cos value from degree"""
     return m.cos(phi * m.pi / 180)
 
+
 def radius(x, y):
     """calculates radius from x and y"""
-    return m.sqrt(x**2 + y**2)
+    return m.sqrt(x ** 2 + y ** 2)
+
+
 class BubbleRenderer:
+    packings = ['circle', 'rectangle', 'planets']
 
     def __init__(self, **kwargs):
         self.frame = None
@@ -24,13 +34,41 @@ class BubbleRenderer:
         self.data = None
         self.labels = None
         self.cmap = None
+        self.dpi: int = 600
         self.packing = None
         self.background_color = None
+        self.file = None
+        self.png = False
+        self.resolution: int = None
+        self.gradient: bool = True
+        self.gradient_stops: list = [0, 20, 80, 100]
+        self.stroke: bool = False
+        self.stroke_color: str = 'black'
+        self.stroke_width: int = 1
+        self.text_color: str = 'black'
+        self.text_size: int = 10
+        self.text_achor: str = 'middle'
         self._parse_kwargs(kwargs)
 
     def render(self):
         self._create_frame()
         self._create_bubbles()
+        if self.png:
+            app = QApplication.instance()
+            if app is None:
+                app = QApplication(sys.argv)
+            reader = QXmlStreamReader()
+            reader.addData(self.frame.as_svg())
+            renderer = QSvgRenderer()
+            renderer.load(reader)
+            img = QImage(self.size[0], self.size[1], QImage.Format_ARGB32)
+            painter = QPainter(img)
+            renderer.render(painter)
+            img.save(self.file)
+            painter.end()
+            app.quit()
+        elif self.file:
+            self.frame.save_svg(self.file)
         return self.frame
 
     def _create_frame(self):
@@ -48,30 +86,37 @@ class BubbleRenderer:
 
     def _create_bubbles(self):
         circles = []
+        datasum: float = sum(self.data)
+        combined_data_labels = list(zip(self.data, self.labels))
+        sorted_combined = sorted(combined_data_labels, key=lambda x: x[0], reverse=True)
+        sorted_data, sorted_labels = zip(*sorted_combined)
+        print(f"unsorted date={list(zip(self.data, self.labels))}")
+        print(f"{sorted_combined =}")
         if self.packing == 'circle':
             circles = circ.circlify(
-                self.data,
+                sorted_data,
                 target_enclosure=circ.Circle(x=0, y=0, r=self.size[0] / 2),
                 show_enclosure=False,
             )
+            circles = sorted(circles, key=lambda x: x.r, reverse=True)
         elif self.packing == 'rectangle':
             pass
         elif self.packing == 'planets':
-            sorted_data = sorted(self.data, reverse=True)
             dPhi = 360 / len(sorted_data)
-            Phi = [i * dPhi for i in range(len(sorted_data)-1)]
+            Phi = [i * dPhi for i in range(len(sorted_data) - 1)]
+            initial_radius = self.size[0] / 10
             for i, data in enumerate(sorted_data):
                 if i == 0:
-                    circles.append(circ.Circle(x=0, y=0, r=self.size[0] / 3))  # Sun data point
+                    circles.append(circ.Circle(x=0, y=0, r=initial_radius))  # Sun data point
                     continue
-                r = (sorted_data[i] / sorted_data[0]) * self.size[0] / 3 # Planet radius
+                r = (sorted_data[i] / sorted_data[0]) * initial_radius  # Planet radius
                 # polar coordinates
-                R = radius( circles[i-1].x, circles[i-1].y) + circles[i-1].r + r
-                phi = Phi.pop(0) if i%2 == 0 else Phi.pop(int(len(Phi)/2))
+                R = radius(circles[i - 1].x, circles[i - 1].y) + circles[i - 1].r + r
+                phi = Phi.pop(0) if i % 2 == 0 else Phi.pop(int(len(Phi) / 2))
                 R = self.fit_R(R, phi, r, circles)
                 circle = circ.Circle(x=R * cos(phi), y=R * sin(phi), r=r)
                 circles.append(circle)
-
+        # calculate color gradient and add circles to the frame
         if circles is None:
             raise ValueError("Circles could not be created")
         for i, circle in enumerate(circles):
@@ -85,25 +130,41 @@ class BubbleRenderer:
                 fx=x,
                 fy=y,
             )
-            first_gradient.add_stop(offset="0%", color=self.cmap[1])
-            first_gradient.add_stop(offset="20%", color=self.cmap[1])
-            first_gradient.add_stop(offset="80%", color=self.cmap[0])
-            first_gradient.add_stop(offset="100%", color=self.background_color)
+            first_gradient.add_stop(offset=f"{self.gradient_stops[0]}%", color=self.cmap[1])
+            first_gradient.add_stop(offset=f"{self.gradient_stops[1]}%", color=self.cmap[1])
+            first_gradient.add_stop(offset=f"{self.gradient_stops[2]}%", color=self.cmap[0])
+            first_gradient.add_stop(offset=f"{self.gradient_stops[3]}%", color=self.background_color)
             self.frame.append(drawsvg.Circle(
                 cx=x,
                 cy=y,
                 r=r,
                 fill=first_gradient,
-                stroke='black',
-                stroke_width=1,
+                stroke=self.stroke_color if self.stroke else 'none',
+                stroke_width=self.stroke_width,
             ))
             self.frame.append(drawsvg.Text(
-                text=f"""{self.labels[i]}\n{self.data[i]}""",
+                text=f"""{sorted_labels[i]}""",
+                x=x,
+                y=y - self.text_size,
+                text_anchor=self.text_achor,
+                font_size=self.text_size,
+                fill=self.text_color,
+            ))
+            self.frame.append(drawsvg.Text(
+                text=f"""{sorted_data[i]}""",
                 x=x,
                 y=y,
-                text_anchor="middle",
-                font_size=10,
-                fill='black',
+                text_anchor=self.text_achor,
+                font_size=self.text_size,
+                fill=self.text_color,
+            ))
+            self.frame.append(drawsvg.Text(
+                text=f"""{sorted_data[i] / datasum * 100:.2f}%""",
+                x=x,
+                y=y + self.text_size,
+                text_anchor=self.text_achor,
+                font_size=self.text_size,
+                fill=self.text_color,
             ))
 
     def _create_random_data(self):
@@ -121,12 +182,21 @@ class BubbleRenderer:
             self.data = kwargs['data']
         else:
             self._create_random_data()
+        if 'labels' in kwargs:
+            self.labels = kwargs['labels']
         if 'cmap' in kwargs:
             self.cmap = kwargs['cmap']
         if 'background_color' in kwargs:
             self.background_color = kwargs['background_color']
         if 'packing' in kwargs:
+            if kwargs['packing'] not in self.packings:
+                raise ValueError(f"'packing' must be one of the following: {self.packings!s}")
             self.packing = kwargs['packing']
+        if 'png' in kwargs and 'file' in kwargs:
+            self.png = kwargs['png']
+            self.file = kwargs['file']
+        elif 'png' in kwargs and 'file' not in kwargs:
+            raise ValueError("File name is not set")
 
     def fit_R(self, R, phi, r, circles):
         d_r = 10
@@ -143,13 +213,18 @@ class BubbleRenderer:
             R -= d_r
 
 
-
 if __name__ == "__main__":
     br = BubbleRenderer(
-        size=(500, 500),
-        background_color='black',
-        cmap=['#C2185B', '#FCE4EC'],
+        size=(3000, 3000),
+        background_color='white',
+        cmap=[
+            '#C2185B',
+            '#FCE4EC'],
         packing='circle',
+        png=True,
+        file="bubbles.png"
     )
+    br.text_size = 50
+    br.gradient_stops = [0, 50, 90, 100]
     img = br.render()
     img.save_svg("bubble.svg")
