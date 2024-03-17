@@ -1,11 +1,10 @@
 import sys
-
 import drawsvg
 import circlify as circ
 import random
 import math as m
 from PySide6.QtSvg import QSvgRenderer
-from PySide6.QtGui import QImage, QPainter, QGuiApplication
+from PySide6.QtGui import QImage, QPainter
 from PySide6.QtCore import QXmlStreamReader
 from PySide6.QtWidgets import QApplication
 
@@ -47,7 +46,7 @@ class BubbleRenderer:
         self.stroke_width: int = 1
         self.text_color: str = 'black'
         self.text_size: int = 10
-        self.text_achor: str = 'middle'
+        self.text_anchor: str = 'middle'
         self._parse_kwargs(kwargs)
 
     def render(self):
@@ -146,7 +145,7 @@ class BubbleRenderer:
                 text=f"""{sorted_labels[i]}""",
                 x=x,
                 y=y - self.text_size,
-                text_anchor=self.text_achor,
+                text_anchor=self.text_anchor,
                 font_size=self.text_size,
                 fill=self.text_color,
             ))
@@ -154,7 +153,7 @@ class BubbleRenderer:
                 text=f"""{sorted_data[i]}""",
                 x=x,
                 y=y,
-                text_anchor=self.text_achor,
+                text_anchor=self.text_anchor,
                 font_size=self.text_size,
                 fill=self.text_color,
             ))
@@ -162,7 +161,7 @@ class BubbleRenderer:
                 text=f"""{sorted_data[i] / datasum * 100:.2f}%""",
                 x=x,
                 y=y + self.text_size,
-                text_anchor=self.text_achor,
+                text_anchor=self.text_anchor,
                 font_size=self.text_size,
                 fill=self.text_color,
             ))
@@ -186,8 +185,22 @@ class BubbleRenderer:
             self.labels = kwargs['labels']
         if 'cmap' in kwargs:
             self.cmap = kwargs['cmap']
+        if  'gradient_stops' in kwargs:
+            self.gradient_stops = kwargs['gradient_stops']
         if 'background_color' in kwargs:
             self.background_color = kwargs['background_color']
+        if 'text_size' in kwargs:
+            self.text_size = kwargs['text_size']
+        if 'text_color' in kwargs:
+            self.text_color = kwargs['text_color']
+        if 'text_anchor' in kwargs:
+            self.text_anchor = kwargs['text_anchor']
+        if 'stroke' in kwargs:
+            self.stroke = kwargs['stroke']
+        if 'stroke_color' in kwargs:
+            self.stroke_color = kwargs['stroke_color']
+        if 'stroke_width' in kwargs:
+            self.stroke_width = kwargs['stroke_width']
         if 'packing' in kwargs:
             if kwargs['packing'] not in self.packings:
                 raise ValueError(f"'packing' must be one of the following: {self.packings!s}")
